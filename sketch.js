@@ -25,7 +25,7 @@ function draw() {
   background(0,0,0);  
 
   
-  bullet.collide(wall);
+
   
   if (hasCollided(bullet, wall)) {
 
@@ -48,12 +48,10 @@ function draw() {
 }
 
 
-function hasCollided(bullet, wall) {
-
-  bullet= bullet.x + bullet.width;
-  wall = wall.x;
-
-  if (bullet >= wall) {
+function hasCollided(lbullet, lwall) { 
+  bulletRightEdge=lbullet.x +lbullet.width; 
+  wallLeftEdge=lwall.x; 
+  if (bulletRightEdge>=wallLeftEdge) {
     return true;
   }
   return false;
